@@ -12,6 +12,7 @@ const (
 	deleteTemplateFile                    = "delete.tpl"
 	deleteMethodTemplateFile              = "interface-delete.tpl"
 	fieldTemplateFile                     = "field.tpl"
+	findTemplateFile                      = "find.tpl"
 	findOneTemplateFile                   = "find-one.tpl"
 	findOneMethodTemplateFile             = "interface-find-one.tpl"
 	findOneByFieldTemplateFile            = "find-one-by-field.tpl"
@@ -37,6 +38,7 @@ var templates = map[string]string{
 	deleteTemplateFile:                    template.Delete,
 	deleteMethodTemplateFile:              template.DeleteMethod,
 	fieldTemplateFile:                     template.Field,
+	findTemplateFile:                      template.Find,
 	findOneTemplateFile:                   template.FindOne,
 	findOneMethodTemplateFile:             template.FindOneMethod,
 	findOneByFieldTemplateFile:            template.FindOneByField,

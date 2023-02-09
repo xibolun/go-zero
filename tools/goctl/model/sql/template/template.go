@@ -83,6 +83,12 @@ var Imports string
 //go:embed tpl/import-no-cache.tpl
 var ImportsNoCache string
 
+// Find defines find by cond.
+//
+//go:embed tpl/find.tpl
+
+var Find string
+
 // FindOne defines find row by id.
 //
 //go:embed tpl/find-one.tpl

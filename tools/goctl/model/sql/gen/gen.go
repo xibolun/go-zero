@@ -295,7 +295,12 @@ func (g *defaultGenerator) genModel(in parser.Table, withCache bool) (string, er
 		return "", err
 	}
 
-	findCode = append(findCode, findOneCode, ret.findOneMethod)
+	findMoreCode, err := genFind(table, withCache, g.isPostgreSql)
+	if err != nil {
+		return "", err
+	}
+
+	findCode = append(findCode, findOneCode, ret.findOneMethod, findMoreCode)
 	updateCode, updateCodeMethod, err := genUpdate(table, withCache, g.isPostgreSql)
 	if err != nil {
 		return "", err

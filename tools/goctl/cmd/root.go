@@ -21,6 +21,7 @@ import (
 	"github.com/zeromicro/go-zero/tools/goctl/model"
 	"github.com/zeromicro/go-zero/tools/goctl/quickstart"
 	"github.com/zeromicro/go-zero/tools/goctl/rpc"
+	"github.com/zeromicro/go-zero/tools/goctl/seed"
 	"github.com/zeromicro/go-zero/tools/goctl/tpl"
 	"github.com/zeromicro/go-zero/tools/goctl/upgrade"
 )
@@ -113,8 +114,8 @@ func init() {
 	})
 
 	rootCmd.Version = fmt.Sprintf(
-		"%s %s/%s", version.BuildVersion,
-		runtime.GOOS, runtime.GOARCH)
+		"%s %s/%s	%s", version.BuildVersion,
+		runtime.GOOS, runtime.GOARCH, "-by pengganyu")
 
 	rootCmd.SetUsageTemplate(usageTpl)
 	rootCmd.AddCommand(api.Cmd)
@@ -123,6 +124,7 @@ func init() {
 	rootCmd.AddCommand(kube.Cmd)
 	rootCmd.AddCommand(env.Cmd)
 	rootCmd.AddCommand(model.Cmd)
+	rootCmd.AddCommand(seed.Cmd)
 	rootCmd.AddCommand(migrate.Cmd)
 	rootCmd.AddCommand(quickstart.Cmd)
 	rootCmd.AddCommand(rpc.Cmd)
